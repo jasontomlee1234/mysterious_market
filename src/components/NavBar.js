@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useWeb3React } from '@web3-react/core'
 import { InjectedConnector } from '@web3-react/injected-connector'
 import styled from 'styled-components';
+import React,{ Component } from "react";
 
 import {
     Link
@@ -13,19 +14,24 @@ const StyledNavBarDiv = styled.div`
 background: black;
 float: left;
 height: 100vh;
-width: 150px;
-padding: 10px
+width: 180px;
+padding: 0px
 `
 
 const StyledNavButton = styled.button`
 width:100%;
-height: 30px;
-margin-top: 30px;
+height: 40px;
+margin-top: 20px;
 background: transparent;
 color: white;
-border-radius: 50px;
+border:none;
 font-size: 20px;
+cursor: pointer;
 &:focus { outline: none; }
+:hover {
+    background: white;
+    color: black;
+}
 `
 
 function NavBar(props) {
@@ -33,6 +39,7 @@ function NavBar(props) {
 
     return (
         <StyledNavBarDiv>
+            <p style={{width:"100%", color:"white", paddingTop:"10px", height:"10px"}}><b>FantomDiamond</b></p>
             <StyledNavButton onClick={() => { account ? deactivate() : activate(injected) }}>{
                 account ? account.slice(0, 6) + "..." : "CONNECT"
             }</StyledNavButton>

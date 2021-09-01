@@ -7,6 +7,7 @@ import SimpleMarketPlace from "./pages/SimpleMarketPlace"
 
 import { useWeb3React } from '@web3-react/core'
 import styled from 'styled-components';
+import React,{ Component } from "react";
 
 import {
   BrowserRouter as Router,
@@ -19,11 +20,11 @@ import {
 
 const StyledMainBodyDiv = styled.div`
 width: 100%;
-margin: auto;
 `
 const StyledFontDiv = styled.div`
 color: lightsalmon;
 font-size: 50px;
+margin-top: 300px
 `
 function App() {
   const { account, chainId } = useWeb3React()
@@ -32,6 +33,7 @@ function App() {
       <div className="App">
         <NavBar />
         <StyledMainBodyDiv>
+        <p style={{fontSize:"40px", fontFamily:"Aril", color:"white", float:"left", width:"100%", marginTop:""}}>Fantom Diamond NFT market</p>
           <Switch>
             <Route path="/marketplace">
               {

@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
+import React,{ Component } from "react";
 
 const StyledDiv = styled.div`
 border-radius: 20px;
@@ -17,8 +18,7 @@ width: 600px;
 margin: auto;
 padding: 10px;
 text-align: left;
-background: darkgrey;
-border-style: solid;
+background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
 border-color: cadetblue;
 * {
     margin: 5px;
@@ -26,6 +26,7 @@ border-color: cadetblue;
 `
 
 const StyledWrapDiv = styled.div`
+margin-top: 150px;
 `
 
 const StyledRowDiv = styled.div`
@@ -201,33 +202,37 @@ function SimpleMarketPlace(props) {
     return (
         <StyledWrapDiv>
             <StyledDiv>
-                <StyledRowDiv>Marketplace</StyledRowDiv>
+                <StyledRowDiv style={{fontSize:"25px"}}><b>Marketplace</b></StyledRowDiv>
                 <StyledRowDiv>
-                    <div>approve</div>
+                    <div style={{fontSize:"20px"}}><b>Sell</b></div>
+                    <div>1. approve</div>
                     <label>Token id</label>
                     <input onChange={handleApproveTokenIdChange} />
-                    <button onClick={() => { approve(nftContract, library, approveTokenId) }}>approve</button>
+                    <button style={{cursor:"pointer"}} onClick={() => { approve(nftContract, library, approveTokenId) }}>approve</button>
                 </StyledRowDiv>
+                
 
                 <StyledRowDiv>
-                    <div>sell</div>
+                    <div>2. place order</div>
                     <label>Token id</label>
                     <input onChange={handleSellTokenIdChange} />
                     <label>list price</label>
                     <input onChange={handleListPriceChange} />
-                    <button onClick={() => { ask(marketplaceContract, library, sellTokenId, listPrice) }}>sell</button>
+                    <button style={{cursor:"pointer"}} onClick={() => { ask(marketplaceContract, library, sellTokenId, listPrice) }}>sell</button>
                 </StyledRowDiv>
+                <hr style={{width:"80%", marginLeft:"10%", backgroundImage:"linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))"}}></hr>
                 <StyledRowDiv>
-                    <div>buy</div>
+                    <div style={{fontSize:"20px"}} ><b>Purchase</b></div>
                     <label>Token id</label>
                     <input onChange={handlBuyTokenIdChange} />
-                    <button onClick={() => { bid(marketplaceContract, library, buyTokenId) }}>buy</button>
+                    <button style={{cursor:"pointer"}} onClick={() => { bid(marketplaceContract, library, buyTokenId) }}>buy</button>
                 </StyledRowDiv>
+                <hr style={{width:"80%", marginLeft:"10%"}}></hr>
                 <StyledRowDiv>
-                    <div>cancel</div>
+                    <div style={{fontSize:"20px"}}><b>Cancel order</b></div>
                     <label>Token id</label>
                     <input onChange={handleCancelTokenIdChange} />
-                    <button onClick={() => { cancelOffer(marketplaceContract, library, cancelTokenId) }}>cancel</button>
+                    <button style={{cursor:"pointer"}} onClick={() => { cancelOffer(marketplaceContract, library, cancelTokenId) }}>cancel</button>
                 </StyledRowDiv>
                 {/* <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={marketDialogOpen}>
                     <DialogTitle id="simple-dialog-title">Market</DialogTitle>

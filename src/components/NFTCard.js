@@ -1,5 +1,6 @@
 
 import { useWeb3React } from '@web3-react/core'
+import React,{ Component } from "react";
 
 function bid(contract,library, tokenId, price){
     contract = contract.connect(library.getSigner())

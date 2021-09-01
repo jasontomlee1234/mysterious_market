@@ -19,6 +19,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import React,{ Component } from "react";
 
 
 const useStyles = makeStyles({
@@ -106,17 +107,19 @@ function Marketplace(props) {
 
 
     }, [])
-
+    let count = 0
     return (
         <div>
             {
-                isLoading ? <CircularProgress /> : <TableContainer component={Paper}>
+                isLoading ? <CircularProgress /> : 
+                onSaleTableRow.length != 0 ?
+                <TableContainer component={Paper}>
                     <Table className={classes.table} aria-label="simple table">
-                        <TableHead>
+                        <TableHead style={{background:"gray"}}>
                             <TableRow>
-                                <TableCell align="right">id</TableCell>
-                                <TableCell align="right">seller</TableCell>
-                                <TableCell align="right">price</TableCell>
+                                <TableCell align="center">id</TableCell>
+                                <TableCell align="center">seller</TableCell>
+                                <TableCell align="center">price</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>{
@@ -125,16 +128,17 @@ function Marketplace(props) {
                             // })
                             onSaleTableRow.map((row) => {
                                 console.log(row)
-                                return <TableRow>
-                                    <TableCell align="right">{row.tokenId}</TableCell>
-                                    <TableCell align="right">{row.seller}</TableCell>
-                                    <TableCell align="right">{row.price}</TableCell>
+                                return <TableRow key={count++}>
+                                    <TableCell align="center">{row.tokenId}</TableCell>
+                                    <TableCell align="center">{row.seller}</TableCell>
+                                    <TableCell align="center">{row.price}</TableCell>
                                 </TableRow>
                             })
                         }
                         </TableBody>
                     </Table>
-                </TableContainer>
+                </TableContainer> :
+                <div style={{fontSize:"40px",color:"lightsalmon"}}>No avaliable Diamonds is on sale</div>
             }
 
         </div>

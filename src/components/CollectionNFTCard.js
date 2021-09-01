@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useWeb3React } from '@web3-react/core'
 import address from '../address.json'
 import { useEffect, useState } from 'react';
+import React,{ Component } from "react";
 
 const StyledDiv = styled.div`
 border-style: solid;

@@ -4,6 +4,7 @@ import { Contract } from '@ethersproject/contracts'
 import { useWeb3React } from '@web3-react/core'
 import { useEffect, useState } from "react"
 import address from '../address.json'
+import React,{ Component } from "react";
 
 import CollectionNFTCard from '../components/CollectionNFTCard'
 
