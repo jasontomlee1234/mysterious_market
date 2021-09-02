@@ -131,7 +131,7 @@ function Marketplace(props) {
                                 console.log(row)
                                 return <TableRow key={count++}>
                                     <TableCell align="center">{row.tokenId}</TableCell>
-                                    <TableCell align="center"><img style={{width: "40px"}} src={`https://gateway.pinata.cloud/ipfs/QmP6W7YgNDKpSq1bTsiEf6q23YSfYQ9yMFYnqxzyMmBez2/DIAMOND${row.tokenId}.jpg`}/></TableCell>
+                                    <TableCell align="center"><img style={{width: "40px", borderRadius: "50px"}} src={`https://gateway.pinata.cloud/ipfs/QmP6W7YgNDKpSq1bTsiEf6q23YSfYQ9yMFYnqxzyMmBez2/DIAMOND${row.tokenId}.jpg`}/></TableCell>
                                     <TableCell align="center">{row.seller}</TableCell>
                                     <TableCell align="center">{row.price}</TableCell>
                                 </TableRow>
