@@ -138,7 +138,7 @@ function Marketplace(props) {
                         </TableBody>
                     </Table>
                 </TableContainer> :
-                <div style={{fontSize:"40px",color:"lightsalmon"}}>No avaliable Diamonds is on sale</div>
+                <div style={{fontSize:"40px",color:"lightsalmon"}}>No avaliable Diamonds are on sale</div>
             }
 
         </div>
