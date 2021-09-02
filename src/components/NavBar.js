@@ -39,7 +39,7 @@ function NavBar(props) {
 
     return (
         <StyledNavBarDiv>
-            <p style={{width:"100%", color:"white", paddingTop:"10px", height:"10px"}}><b>FantomDiamond</b></p>
+            <a href="https://fantomdiamond.shop/mint/#/"><p style={{width:"100%", color:"white", paddingTop:"10px", height:"10px"}}><b>FantomDiamond</b></p></a>
             <StyledNavButton onClick={() => { account ? deactivate() : activate(injected) }}>{
                 account ? account.slice(0, 6) + "..." : "CONNECT"
             }</StyledNavButton>
