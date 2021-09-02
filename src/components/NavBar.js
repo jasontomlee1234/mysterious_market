@@ -8,7 +8,7 @@ import {
     Link
 } from "react-router-dom";
 
-const injected = new InjectedConnector({ supportedChainIds: [4002, 250] })
+const injected = new InjectedConnector({ supportedChainIds: [250] })
 
 const StyledNavBarDiv = styled.div`
 background: black;
